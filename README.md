@@ -45,7 +45,15 @@ to install the other dependencies
 
 Download a gguf file and place in `~/.cash/models/`
 
+you can get chat model from here https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
+
 Read install instructions for llamma_cpp here https://github.com/abetlen/llama-cpp-python
+
+Note how it states
+
+```
+For mac  ile name ends with Q4_0.gguf - indicating it is 4bit quantized, with quantisation method 0
+```
 
 ### Whisper
 

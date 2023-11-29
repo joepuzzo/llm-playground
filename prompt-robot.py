@@ -2,7 +2,7 @@ import os
 from llama_cpp import Llama
 
 # Load the model
-model_path = "~/.cache/models/llama-2-7b-chat.Q5_K_M.gguf"
+model_path = "~/.cache/models/llama-2-7b-chat.Q4_0.gguf"
 expanded_model_path = os.path.expanduser(model_path)
 llm = Llama(expanded_model_path)
 
