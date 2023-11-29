@@ -4,12 +4,18 @@ import whisper
 import threading
 import sys
 import select
-from langchain.llms import Ollama
+# from langchain.llms import Ollama
+from langchain.chat_models import ChatOllama
+import subprocess
+
+def speak(text):
+    subprocess.call(['say', text])
 
 # Initialize PyAudio, Whisper, and Ollama
 audio = pyaudio.PyAudio()
 model = whisper.load_model("base")  # or another model size
-llm = Ollama(model="llama2")
+# llm = Ollama(model="llama2")
+llm = ChatOllama(model="llama2:7b-chat")
 
 def record_audio():
     # Start recording from the microphone
@@ -51,6 +57,11 @@ def transcribe_and_process_audio():
         # Process the transcription with Ollama
         llm_response = llm.predict(transcription)
         print("LLM Response: " + llm_response)
+
+        # Speak
+        speak(llm_response)
+
+       
     except KeyboardInterrupt:
         print("Operation interrupted. Waiting for user input...")
 
