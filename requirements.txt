@@ -1,0 +1,7 @@
+torch 
+torchvision 
+torchaudio
+llama-cpp-python
+pyaudio
+wave
+openai-whisper
